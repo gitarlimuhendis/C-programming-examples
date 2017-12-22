@@ -1,0 +1,35 @@
+/* Soru: Dışarıdan girilen bir cümle içerisindeki en uzun kelimeyi ekrana yazdıran program
+B.T.
+github : gitarlimuhendis
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+
+
+int main()
+{
+	char yazi[100] = "";
+	scanf("%[^\n]s", &yazi);
+	yazi[strlen(yazi)] = ' ';
+	int i = 0;
+	int enuzunkelime = 0, enuzunindis = 0, kelimeBaslangic=0;
+	for (i = 0; i < strlen(yazi); i++)
+	{
+		if (yazi[i] == ' ')
+		{
+			if (i-kelimeBaslangic > enuzunkelime)
+			{
+				enuzunkelime = i-kelimeBaslangic;
+				enuzunindis = kelimeBaslangic;
+			}
+			kelimeBaslangic = i + 1;
+		}
+	}
+	
+	for (i = 0; i < enuzunkelime; i++)
+	{
+		printf("%c", yazi[enuzunindis+i]);
+	}
+}
