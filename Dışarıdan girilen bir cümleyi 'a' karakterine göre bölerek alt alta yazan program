@@ -1,0 +1,23 @@
+/* Soru: Dışarıdan girilen bir cümleyi 'a' karakterine göre bölerek alt alta yazan programı yazınız
+B.T.
+github : gitarlimuhendis
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+
+
+int main()
+{
+	char yazi[100] = "";
+	scanf("%[^\n]s", &yazi);
+	int i = 0;
+	for (i = 0; i < strlen(yazi); i++)
+	{
+		if (yazi[i] == 'a')
+			printf("\r\n");
+		else
+			printf("%c", yazi[i]);
+	}
+}
